@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doya - aplikacja na zakupy</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -88,7 +89,7 @@
         <!-- SECTION SHOWCASE -->
         <section class="showcase section">
             <div class="container flex">
-                <div class="showcase__text">
+                <div class="showcase__text" data-aos="fade-right" data-aos-delay="200"  data-aos-duration="1000">
                     <h1 class="heading1">Aplikacja na zakupy do gadżetów i prezentów</h1>
                     <p class="paragraph">Zyskaj 10% zniżki na pierwsze zamówienie, wydając ponad $20 na dowolny produkt! </p>
                     <p class="paragraph"><a href="#" class="btn">Pobierz aplikację</a></p>
@@ -103,14 +104,14 @@
             <div class="container">
                     <p class="application__title">Jak działa aplikacja</p>
                 <div class="grid">
-                    <img src="img/application.png" class="application__img--desktop" alt="zdjęcie aplikacji">
+                    <img src="img/application.png" class="application__img--desktop" alt="zdjęcie aplikacji" data-aos="fade-right" data-aos-delay="200" data-aos-duration="750">
 
                     <div class="application__info">
                         <p class="label">Utwórz konto</p>
                         <h2 class="heading2">Odkryj oryginalne produkty</h2>
                         <p class="paragraph">Istnieje ponad 950 kategorii aktualizowanych codziennie na podstawie popularnych recenzji witryn i ocen użytkowników.</p>
                     </div>
-                    <img src="img/application.png" class="application__img--mobile" alt="zdjęcie aplikacji">
+                    <img src="img/application.png" class="application__img--mobile" alt="zdjęcie aplikacji" data-aos="fade-right" data-aos-delay="200" data-aos-duration="750">
                 </div>
             </div>
         </section>
@@ -124,8 +125,8 @@
                         <h2 class="heading2">Poznaj produkty w AR</h2>
                         <p class="paragraph">Czy próbowałeś rzeczywistości rozszerzonej? Przestań patrzeć na nudne galerie i zacznij doświadczać każdego przedmiotu. </p>
                     </div>
-                    <img src="img/ar.png" alt="produkt AR" class="ar__img ar__img--desktop">
-                    <img src="img/ar-mobile.png" alt="produkt AR" class="ar__img ar__img--mobile">
+                    <img src="img/ar.png" alt="produkt AR" class="ar__img ar__img--desktop" data-aos="fade-left" data-aos-delay="200" data-aos-duration="750">
+                    <img src="img/ar-mobile.png" alt="produkt AR" class="ar__img ar__img--mobile" data-aos="fade-right" data-aos-delay="200" data-aos-duration="750">
                 </div>
             </div>
         </section>
@@ -134,13 +135,13 @@
         <section class="application section">
             <div class="container">
                 <div class="grid">
-                    <img src="img/offer.png" class="application__img--desktop" alt="zdjęcie aplikacji">
+                    <img src="img/offer.png" class="application__img--desktop" alt="zdjęcie aplikacji" data-aos="fade-right" data-aos-delay="200" data-aos-duration="750">
                     <div class="application__info">
                         <p class="label">Oryginalna platforma</p>
                         <h2 class="heading2">Najgorętsze oferty w internecie</h2>
                         <p class="paragraph">Znajdź idealny prezent lub przedmioty codziennego użytku na wyciągnięcie ręki.</p>
                     </div>
-                    <img src="img/offer-mobile.png" class="application__img--mobile" alt="zdjęcie aplikacji">
+                    <img src="img/offer-mobile.png" class="application__img--mobile" alt="zdjęcie aplikacji" data-aos="fade-right" data-aos-delay="200" data-aos-duration="750">
                 </div>
             </div>
         </section>
@@ -149,7 +150,7 @@
         <section class="socialmedia section">
                 <div class="container grid">
                     <p class="socialmedia__text">Hej! Obserwuj nas w mediach społecznościowych, aby nie przegapić żadnej oferty.</p>
-                    <img src="img/social.png" class="socialmedia__img" alt="social media">
+                    <img src="img/social.png" class="socialmedia__img" alt="social media" data-aos="fade-left" data-aos-delay="200" data-aos-duration="750">
                 </div>
         </section>
 
@@ -169,6 +170,7 @@
         </div>
     </footer>
 
-    <script src="/dist/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/all.js"></script>
 </body>
 </html>

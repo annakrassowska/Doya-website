@@ -18,6 +18,7 @@ hideMenu.addEventListener('click', function() {
   overlay.classList.add('hidden');
 });
 
+AOS.init();
 
 // toogleMobile.addEventListener('click', show(overlay));
 // toogleMobile.addEventListener('click', show(menuMobile));
