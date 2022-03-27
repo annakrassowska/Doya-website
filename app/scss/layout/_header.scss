@@ -1,0 +1,17 @@
+.header {
+    padding-top: 24px;
+    position: relative;
+    & .flex {
+        justify-content: space-between;
+    }
+}
+
+@include tablet-up {
+    .header {
+    padding-top: 60px;
+        .logo {
+            align-items: center;
+            display: inline-flex;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.btn {
+    background-color: $accent-color-2;
+    color: $white;
+    padding: 12px 25px;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-size: $font-size-5;
+    font-weight: $font-weight-bold;
+    border-radius: $border-radius;
+    margin: 5px 0;
+    transition: background-color .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
+
+    &:hover {
+        color: $accent-color-2;
+        background-color: $white;
+        border-color: $accent-color-2
+    }
+
+    &--small {
+       padding: 12px 25px;
+    } 
+    
+}
+
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    z-index: 20;
+    border: none;
+    background-color: transparent;
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+
+    svg, path {
+        fill: $text-color-light;
+     }
+
+    &:hover {
+        svg, path {
+           fill: $accent-color-2;
+        }
+    }
+
+    @include tablet-up {
+        display: none;
+    }
+}
+
+.btn-menu {
+    cursor: pointer;
+    &:hover {
+        svg, path {
+           fill: $accent-color-2;
+        }
+    }
+}

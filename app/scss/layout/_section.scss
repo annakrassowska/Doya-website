@@ -1,0 +1,212 @@
+.section {
+    margin: 100px 0;
+}
+
+.showcase {
+    overflow: hidden;
+    margin: 60px 0;
+
+    @include mobile-up {
+        margin: 90px 0;
+    }
+
+    .flex {
+        flex-direction: column;
+        @include mobile-up {
+            flex-direction: row;
+            justify-content: start;
+        }
+    }
+
+    &__text {
+        width: 90%;
+        margin: 0 auto;
+        @include mobile-up {
+            width: 60%;
+            margin: 0;
+            justify-content: start;
+        }
+    }
+    h1 {
+        margin-bottom: 24px;
+    }
+    p {
+        margin-bottom: 44px;
+    }
+    &__img {
+        z-index: -10;
+
+        &--desktop {
+            display: none;
+
+            @include mobile-up {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 45%;
+            }
+        }
+
+        &--mobile {
+            position: relative;
+            right: -50px;
+            @include mobile-up {
+                display: none;
+            }
+        }
+    }
+
+}
+
+.application {
+
+    @include mobile-up {
+        margin-top: 200px;
+    }
+
+    &__title {
+        font-weight: $font-weight-semibold;
+        font-size: 34px;
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 76px;
+
+        @include mobile-up {
+            font-size: $font-size-2;
+        }
+    }
+
+    &__info {
+        text-align: center;
+        margin: 0 15px;
+        padding-bottom: 30px;
+
+        .label {
+            @include mobile-up {
+               text-align: left;
+            }
+        }
+
+        .heading2 {
+            text-align: center;
+            margin-top: 30px;
+            @include mobile-up {
+                text-align: left;
+            }
+        }
+
+        .paragraph {
+            color: $text-color-light;
+            margin-top: 34px;
+            text-align: center;
+            @include mobile-up {
+                text-align: left;
+            }
+        }
+    }
+
+    &__img {
+        &--desktop {
+            display: none;
+
+            @include mobile-up {
+                display: inline-block;
+            }
+        }
+        &--mobile {
+            display: inline-block;
+            margin: 0 auto;
+
+            @include mobile-up {
+                display: none;
+            }
+        }
+    }
+
+    .grid {
+        grid-template-columns :1fr;
+        
+        @include mobile-up {    
+            grid-template-columns: 45% 55%;
+        }
+    }
+    
+}
+
+.ar {
+    .grid {
+        grid-template-columns: 1fr;
+
+        @include tablet-up {
+            position: relative;
+            grid-template-columns: 45% 55%;
+            background: $gradient;
+            border-radius: 50px;
+            padding: 133px 55px;
+        }
+        .ar__text {
+            margin-bottom: 35px;
+
+            .heading2 {
+                text-align: center;
+                @include tablet-up {
+                    text-align: left;
+                }
+            }
+            p {
+                color: $text-color-light;
+                text-align: center;
+                margin-top: 44px;
+                @include tablet-up {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    &__img {
+        &--mobile {
+            display: inline-block;
+            justify-self: center;
+            @include tablet-up {
+                display: none;
+            }
+        }
+        &--desktop {
+            display: none;
+            @include tablet-up {
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                top: -105px;
+            }
+        }
+    }
+
+}
+
+.socialmedia {
+    &__text {
+        max-width: 500px;
+        text-align: center;
+        font-size: 1.625rem; //26px
+        font-weight: $font-weight-bold;
+        line-height: 36px;
+        justify-self: center;
+        @include tablet-up {
+            font-size: $font-size-3;
+            line-height: 57px;
+        }
+    }
+    &__img {
+        justify-self: center;
+        padding-bottom: 65px;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        border-bottom: 1px solid #C9CADE;
+        @include tablet-up {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.navigation {
+    &--desktop {
+        display: none;
+        
+        @include tablet-up {
+            display: block;
+            
+            ul {
+            display: flex;
+            align-items: center;
+                li:last-child {
+                    margin-left: 120px;
+                }
+            }
+            a {
+                padding: 10px;
+                margin: 0 30px;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $accent-color-2;
+                }
+
+                &.active {
+                    color: $accent-color-2;
+                }
+            }
+        }
+    }
+
+    &--mobile {
+        background-color: $white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 20%;
+        z-index: 100;
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+
+            &__top {
+                padding: 19px 24px;
+                border-bottom: 1px solid $accent-color-2;
+
+                &-heading {
+                    font-size: 40px;
+                    font-weight: $font-weight-bold;
+                    color: $accent-color-2;
+                }
+            }
+
+        }
+
+        nav {
+            .menu-mobile {
+                &__list {
+                    padding: 46px 0 22px 24px;
+                    border-bottom: 1px solid $accent-color-2;
+                    li {
+                        padding-bottom: 28px;
+                        a {
+                            &:hover {
+                                cursor: pointer;
+                                color: $accent-color-2;
+                            }
+                        }
+                    }
+                }
+            }
+            #btn-mobile {
+                padding: 46px 24px;
+            }
+        }
+
+        @include tablet-up {
+            display: none;
+        }
+    }
+}
