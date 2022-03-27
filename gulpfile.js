@@ -1,50 +1,86 @@
-const { src, dest, watch, series } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+const {
+  src,
+  dest,
+  watch,
+  series,
+  tree
+} = require('gulp');
+const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
 const terser = require('gulp-terser');
-const browsersync = require('browser-sync').create();
+const imagemin = require('gulp-imagemin');
+const concat = require('gulp-concat')
+const browserSync = require('browser-sync').create();
 
-// Sass Task
-function scssTask(){
-  return src('app/scss/style.scss', { sourcemaps: true })
-    .pipe(sass())
-    .pipe(postcss([cssnano()]))
-    .pipe(dest('dist', { sourcemaps: '.' }));
+const paths = {
+  scss: {
+      src: 'app/scss/**/*.scss',
+      dest: './dist/css'
+  },
+  js: {
+      src: 'app/js/**/*.js',
+      dest: './dist/js'
+  },
+  html: {
+      src: './*.html',
+      dest: './dist'
+  },
+  img: {
+      src: './img/**/*.*',
+      dest: './dist/img'
+  }
 }
 
-// JavaScript Task
-function jsTask(){
-  return src('app/js/script.js', { sourcemaps: true })
-    .pipe(terser())
-    .pipe(dest('dist', { sourcemaps: '.' }));
+
+function styleTask() {
+  return src(paths.scss.src, { sourcemaps: true })
+      .pipe(concat('style.css'))
+      .pipe(sass())
+      .on('error', sass.logError)
+      .pipe(postcss([autoprefixer(), cssnano()]))
+      .pipe(dest(paths.scss.dest), { sourcemaps: '.' })
+      .pipe(browserSync.stream())
 }
 
-// Browsersync Tasks
-function browsersyncServe(cb){
-  browsersync.init({
-    server: {
-      baseDir: '.'
-    }
+function jsTask() {
+  return src(paths.js.src, { sourcemaps: true })
+      .pipe(concat('all.js'))
+      .pipe(terser())
+      .pipe(dest(paths.js.dest), { sourcemaps: '.' })
+      .pipe(browserSync.stream())
+}
+
+function htmlTask() {
+  return src(paths.html.src)
+      .pipe(dest(paths.html.dest))
+}
+
+function imgTask() {
+  return src(paths.img.src)
+      .pipe(imagemin())
+      .pipe(dest(paths.img.dest))
+}
+
+function watchTask() {
+
+  browserSync.init({
+      server: {
+          baseDir: './dist'
+      }
   });
-  cb();
+
+  watch(paths.html.src, htmlTask).on('change', browserSync.reload);
+  watch(paths.img.src, imgTask);
+  watch(paths.scss.src, styleTask);
+  watch(paths.js.src, jsTask);
 }
 
-function browsersyncReload(cb){
-  browsersync.reload();
-  cb();
-}
-
-// Watch Task
-function watchTask(){
-  watch('*.html', browsersyncReload);
-  watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, jsTask, browsersyncReload));
-}
-
-// Default Gulp task
 exports.default = series(
-  scssTask,
+  styleTask,
   jsTask,
-  browsersyncServe,
+  imgTask,
+  htmlTask,
   watchTask
-);
+)
