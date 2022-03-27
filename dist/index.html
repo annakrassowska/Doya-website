@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aplikacja na zakupy do gadżetów i prezentów">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doya - aplikacja na zakupy</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div id="overlay" class="overlay hidden">
+
+    </div>
+    <header class="header">
+        <div class="container flex">
+
+            <a href="#" class="logo">
+                <img src="./img/doya-logo.png" class="logo" alt="doya-logo-firmy" />
+            </a>
+
+            <nav class="navigation--desktop">
+                <ul>
+                    <li>
+                        <a class="active" href="#">Strona główna</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Faq</a>
+                    </li>
+                    <li>
+                        <a href="#">Kontakt</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn--small">Pobierz aplikację</a>
+                    </li>
+                </ul>
+                
+            </nav>
+
+            <button id="hamburger-menu" class="hamburger">
+                <svg viewBox="0 0 35 35">
+                    <path opacity="0.7" fill="#737373" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                </svg>
+            </button>
+            
+            <div id="menu-mobile" class="navigation--mobile hidden">
+                <div class="menu">
+                    <div class="flex menu__top">
+                        <p class="menu__top-heading">Menu</p>
+                        <button id="hide-menu" class="btn-menu">
+                            <svg width="20" height="20" class="svg-icon" viewBox="0 0 20 20">
+                                <path d="M10.185,1.417c-4.741,0-8.583,3.842-8.583,8.583c0,4.74,3.842,8.582,8.583,8.582S18.768,14.74,18.768,10C18.768,5.259,14.926,1.417,10.185,1.417 M10.185,17.68c-4.235,0-7.679-3.445-7.679-7.68c0-4.235,3.444-7.679,7.679-7.679S17.864,5.765,17.864,10C17.864,14.234,14.42,17.68,10.185,17.68 M10.824,10l2.842-2.844c0.178-0.176,0.178-0.46,0-0.637c-0.177-0.178-0.461-0.178-0.637,0l-2.844,2.841L7.341,6.52c-0.176-0.178-0.46-0.178-0.637,0c-0.178,0.176-0.178,0.461,0,0.637L9.546,10l-2.841,2.844c-0.178,0.176-0.178,0.461,0,0.637c0.178,0.178,0.459,0.178,0.637,0l2.844-2.841l2.844,2.841c0.178,0.178,0.459,0.178,0.637,0c0.178-0.176,0.178-0.461,0-0.637L10.824,10z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="menu-mobile__list">
+                        <li>
+                            <a href="#">Strona główna</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Faq</a>
+                        </li>
+                        <li>
+                            <a href="#">Kontakt</a>
+                        </li>
+                    </ul>
+                    <button id="btn-mobile" class="btn-menu">
+                        <a href="#" class="btn btn--small">Pobierz aplikację</a>
+                    </button>
+                </nav>
+
+            </div>
+
+        </div> 
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- SECTION SHOWCASE -->
+        <section class="showcase section">
+            <div class="container flex">
+                <div class="showcase__text">
+                    <h1 class="heading1">Aplikacja na zakupy do gadżetów i prezentów</h1>
+                    <p class="paragraph">Zyskaj 10% zniżki na pierwsze zamówienie, wydając ponad $20 na dowolny produkt! </p>
+                    <p class="paragraph"><a href="#" class="btn">Pobierz aplikację</a></p>
+                </div>
+                <img src="img/showcase.png" alt="zdjęcie sekcji głównej" class="showcase__img showcase__img--desktop">
+                <img src="img/showcase-mobile.png" alt="zdjęcie sekcji głównej" class="showcase__img showcase__img--mobile">
+            </div>
+        </section>
+
+        <!-- SECTION APPLICATION -->
+        <section class="application section">
+            <div class="container">
+                    <p class="application__title">Jak działa aplikacja</p>
+                <div class="grid">
+                    <img src="img/application.png" class="application__img--desktop" alt="zdjęcie aplikacji">
+
+                    <div class="application__info">
+                        <p class="label">Utwórz konto</p>
+                        <h2 class="heading2">Odkryj oryginalne produkty</h2>
+                        <p class="paragraph">Istnieje ponad 950 kategorii aktualizowanych codziennie na podstawie popularnych recenzji witryn i ocen użytkowników.</p>
+                    </div>
+                    <img src="img/application.png" class="application__img--mobile" alt="zdjęcie aplikacji">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION AR -->
+
+        <section class="ar section">
+            <div class="container">
+                <div class="grid">
+                    <div class="ar__text">
+                        <h2 class="heading2">Poznaj produkty w AR</h2>
+                        <p class="paragraph">Czy próbowałeś rzeczywistości rozszerzonej? Przestań patrzeć na nudne galerie i zacznij doświadczać każdego przedmiotu. </p>
+                    </div>
+                    <img src="img/ar.png" alt="produkt AR" class="ar__img ar__img--desktop">
+                    <img src="img/ar-mobile.png" alt="produkt AR" class="ar__img ar__img--mobile">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SOCIAL -->
+        <section class="application section">
+            <div class="container">
+                <div class="grid">
+                    <img src="img/offer.png" class="application__img--desktop" alt="zdjęcie aplikacji">
+                    <div class="application__info">
+                        <p class="label">Oryginalna platforma</p>
+                        <h2 class="heading2">Najgorętsze oferty w internecie</h2>
+                        <p class="paragraph">Znajdź idealny prezent lub przedmioty codziennego użytku na wyciągnięcie ręki.</p>
+                    </div>
+                    <img src="img/offer-mobile.png" class="application__img--mobile" alt="zdjęcie aplikacji">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SOCIAL -->
+        <section class="socialmedia section">
+                <div class="container grid">
+                    <p class="socialmedia__text">Hej! Obserwuj nas w mediach społecznościowych, aby nie przegapić żadnej oferty.</p>
+                    <img src="img/social.png" class="socialmedia__img" alt="social media">
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container flex">
+            <div class="footer__logo">
+                <a href="#">
+                    <img src="img/doya-logo.png" alt="logo strony">
+                </a>
+                <p>ul. Przemysłowa 234, Tarnów 33-100</p>
+            </div>
+            <div class="footer_text">
+                <p>© Doya™, 2021. All rights reserved. <br> Obrazki zastosowane w projekcie są użyte jedynie w celach wizualizacyjnych.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/dist/script.js"></script>
+</body>
+</html>
